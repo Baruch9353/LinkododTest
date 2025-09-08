@@ -1,4 +1,3 @@
-import logo from '../../assets/צילום מסך 2025-08-05 170603.png';
 import '../style/Post.css';
 
 export type Posti = {
@@ -9,17 +8,15 @@ export type Posti = {
     time: string;
 };
 
-export default function Post ( { post }: { post: Posti } ) {
+export default function Post({ post }: { post: Posti }) {
     return (
-        <div className="post" key={post.id}>
-            <li>
-                <img src={logo} className="imgi" alt="logo" />
-                {post.name}
-                <hr />Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ipsa repudiandae aspernatur sed necessitatibus
-                <hr />{post.likes}👍
-                <hr />{new Date().toLocaleString()}
-                <hr /><button>Like</button>
-            </li>
-        </div>
+        <li className="post">
+            <img src={`http://localhost:3000/${post.id}.png`} className="imgi" alt={post.name} />
+            <p>{post.name}</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <p>{post.likes} 👍</p>
+            <p>{post.time}</p>
+            <button className="like-btn">Like</button>
+        </li>
     );
-};
+}
