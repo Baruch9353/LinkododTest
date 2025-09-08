@@ -17,10 +17,10 @@ export async function getPostsById(id) {
 // Add a new post
 export async function addPosts(newPost) {
   const posts = await getAllPosts();
-  const id = posts.length > 0 ? posts[posts.length - 1].id + 1 : 1;
+  let id = posts.length > 0 ? Number(posts[posts.length - 1].id) + 1 : 1;
 
   const postToAdd = {
-    id: id,
+    id: id+="",
     name: newPost.name,
     description: newPost.description,
     likes: newPost.likes,
@@ -35,30 +35,31 @@ export async function addPosts(newPost) {
 // Update a riddle by id
 export async function updatePosts(id, updatedData) {
   const posts = await getAllPosts();
-  const index = posts.findIndex(r => r.id === id);
-  if (index === -1) return null;
+  const index = posts.find(r => r.id === id);
+  if (!index) return null;
 
   if (!updatedData.name || !updatedData.description || !updatedData.likes || !updatedData.time ) {
-    return null;}
+    return null;
+  }
 
-  const updatedRiddle = {
-    id: id,
-    name: newPost.name,
-    description: newPost.description,
-    likes: newPost.likes,
-    time: newPost.time
+  const updatedPost = {
+    id,
+    name: updatedData.name,
+    description: updatedData.description,
+    likes: updatedData.likes,
+    time: updatedData.time
   };
 
-  posts[index] = updatedRiddle;
+  posts[index.id] = updatedPost;
   await writeFile(listPosts, JSON.stringify(posts, null, 2));
-  return updatedRiddle;
+  return updatedPost;
 }
 
-// Delete a riddle by id
+// Delete a post by id
 export async function deletePosts(id) {
-  const riddles = await getAllPosts();
-  const updatedRiddles = riddles.filter(r => r.id !== id);
+  const posts = await getAllPosts();
+  const updatedPosts = posts.filter(r => r.id !== id);
 
-  await writeFile(listPosts, JSON.stringify(updatedRiddles, null, 2));
+  await writeFile(listPosts, JSON.stringify(updatedPosts, null, 2));
   return true;
 }
