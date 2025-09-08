@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #93d4e4;
+}
+
+h1 {
+    font-size: 400%;
+    margin-left: 2rem;
+    font-family: sans-serif;
+    color: #063054;
+}
+
+.logo {
+    height: 8rem;
+    margin-right: 2rem;
+    border-radius: 1rem;
+}
