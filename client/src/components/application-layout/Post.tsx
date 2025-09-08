@@ -8,6 +8,7 @@ export type Posti = {
     time: string;
 };
 
+// Renders a single post
 export default function Post({ post }: { post: Posti }) {
     return (
         <li className="post">
@@ -16,7 +17,7 @@ export default function Post({ post }: { post: Posti }) {
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
             <p>{post.likes} 👍</p>
             <p>{post.time}</p>
-            <button className="like-btn">Like</button>
+            <button>Like</button>
         </li>
     );
 }

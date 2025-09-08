@@ -8,7 +8,7 @@ export async function getAllPostsHandler(req, res) {
 
 // Handles GET /posts/:id - returns a specific post by ID
 export async function getPostsHandler(req, res) {
-  const id = Number(req.params.id);
+  const id = req.params.id;
   const post = await getPostsById(id);
   if (!post) return res.status(404).send('post not found');
   res.json(post);
@@ -26,7 +26,7 @@ export async function createPostsHandler(req, res) {
 
 // Handles PUT /posts/:id - updates an existing post
 export async function updatePostsHandler(req, res) {
-  const id = Number(req.params.id);
+  const id = req.params.id;
   const { name, description, likes, time } = req.body;
   if (!name || !description || !likes || !time ) {
     return res.status(400).send("All fields are required");
@@ -39,8 +39,8 @@ export async function updatePostsHandler(req, res) {
 
 // Handles DELETE /riddles/:id - deletes a riddle by ID
 export async function deletePostsHandler(req, res) {
-  const id = Number(req.params.id);
+  const id = req.params.id;
   const deleted = await deletePosts(id);
   if (!deleted) return res.status(404).send('post not found');
-  res.send("deleted");
+  res.send(`post ${id} deleted`);
 }
