@@ -1,4 +1,4 @@
-ul{
+.flexi {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,11 +6,10 @@ ul{
     margin: 0;
 }
 
-ul li {
-    margin: 1rem;
-}
-
 .post {
+    color: #004b8c;
+    font-family: sans-serif;
+    cursor: pointer;
     list-style: none;
     width: 14rem;
     padding: 1rem;
@@ -26,20 +25,5 @@ ul li {
     height: 10rem;
 }
 
-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #325b7e;
-    color: white;
-    border: none;
-    border-radius: 0.4rem;
-    cursor: pointer;
-}
 
-li{
-    font-size: 100%;
-    margin-left: 2rem;
-    font-family: sans-serif;
-    color: #004b8c;
-}
+

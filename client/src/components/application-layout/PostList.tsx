@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Post from "./Post";
 import type { Posti } from "./Post";
 import '../style/Header.css'
+import { Link } from "react-router";
 
 // Renders the list of posts
 export default function PostList() {
@@ -19,10 +20,12 @@ export default function PostList() {
     if (!posts.length) return <h1>Loading posts...</h1>;
 
     return (
-        <ul>
+        <div className="flexi">
             {posts.map((post: Posti) => (
-                <Post key={post.id} post={post} />
+                <Link to={`/${post.id}`} key={post.id}>
+                    <Post post={post} />
+                </Link>
             ))}
-        </ul>
+        </div>
     );
 }
