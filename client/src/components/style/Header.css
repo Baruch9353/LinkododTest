@@ -1,22 +1,48 @@
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: sticky;
     top: 0;
-    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     background-color: #93d4e4;
 }
 
+.header-under {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bdf0fc;
+}
+
 h1 {
-    font-size: 400%;
+    font-size: 420%;
     margin-left: 2rem;
     font-family: sans-serif;
     color: #063054;
+    cursor: pointer;
 }
 
 .logo {
     height: 8rem;
     margin-right: 2rem;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+.buttons {
+    font-size: 120%;
+    font-weight: bold;
+    background-color: #bdf0fc;
+    border: none;
+    color: #063054;
+    margin: 0.4rem 5rem 0.4rem 5rem;
+    cursor: pointer;
 }
