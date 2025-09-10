@@ -23,8 +23,8 @@ nav {
 }
 
 h1 {
-    font-size: 420%;
-    margin-left: 2rem;
+    font-size: 330%;
+    margin-left: 0.6rem;
     font-family: sans-serif;
     color: #063054;
     cursor: pointer;
@@ -32,7 +32,7 @@ h1 {
 
 .logo {
     height: 8rem;
-    margin-right: 2rem;
+    margin: 0.4rem 0.6rem 0.18rem 0.3rem;
     border-radius: 0.7rem;
     cursor: pointer;
 }
@@ -40,9 +40,15 @@ h1 {
 .buttons {
     font-size: 120%;
     font-weight: bold;
-    background-color: #bdf0fc;
-    border: none;
+    background-color: #93d4e4;
     color: #063054;
-    margin: 0.4rem 5rem 0.4rem 5rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem 5rem 0.5rem 5rem;
     cursor: pointer;
+}
+
+.buttons:hover {
+    color: #f2f7f9;
+    background-color: #6caabf;
 }

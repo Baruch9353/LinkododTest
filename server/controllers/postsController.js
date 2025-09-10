@@ -18,10 +18,10 @@ export async function getPostsHandler(req, res) {
 export async function createPostsHandler(req, res) {
   const { name, description, likes, time } = req.body;
   if (!name || !description || !likes || !time ) {
-    return res.status(400).send("Missing fields");
+    return res.status(400).send("All fields are required");
   }
-  const newPost = await addPosts({ name, description, likes, time });
-  res.status(201).json(newPost);
+  await addPosts({ name, description, likes, time });
+  res.status(201).send("New post sent successfully🥳");
 }
 
 // Handles PUT /posts/:id - updates an existing post
@@ -33,11 +33,10 @@ export async function updatePostsHandler(req, res) {
   }
   const updated = await updatePosts(id, { name, description, likes, time });
   if (!updated) return res.status(404).send("post not found");
-  res.json(updated);
+  res.send("Post updated successfully");
 }
 
-
-// Handles DELETE /riddles/:id - deletes a riddle by ID
+// Handles DELETE /posts/:id - deletes a post by ID
 export async function deletePostsHandler(req, res) {
   const id = req.params.id;
   const deleted = await deletePosts(id);

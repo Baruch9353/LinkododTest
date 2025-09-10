@@ -78,16 +78,16 @@
   },
   {
     "id": "11",
-    "name": "Momo",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
-    "likes": " 1",
-    "time": "12:30, 11/12/25"
+    "name": "Baruch",
+    "description": "Testing the app to see if it works",
+    "likes": "100",
+    "time": "10.9.2025, 10:53:26"
   },
   {
     "id": "12",
     "name": "Baruch",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
-    "likes": "10",
-    "time": "9.9.2025, 17:51:20"
+    "description": "Testing the app to see if it works",
+    "likes": "222",
+    "time": "10.9.2025, 17:48:22"
   }
 ]

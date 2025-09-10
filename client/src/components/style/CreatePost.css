@@ -1,0 +1,36 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    gap: 1rem;
+}
+
+input, textarea, .submitButton, .message{
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.submitButton{
+    width: 30%;
+    background-color: #93d4e4;
+    color: #063054;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.message{
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    color: #004b8c;
+    font-family: sans-serif;
+}
+
+.createButton:hover{
+    color: #f2f7f9;
+    background-color: #6caabf;
+}
