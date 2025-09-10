@@ -16,7 +16,6 @@ export default function PostList() {
             .catch((error) => console.error("Error fetching posts:", error));
     }, []);
 
-    // Shows Loading posts if there is a problem
     if (!posts.length) return <h1>Loading posts...</h1>;
 
     return (

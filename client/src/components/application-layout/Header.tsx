@@ -16,16 +16,19 @@ export default function Header() {
             </div>
             <div className="header-under">
                 <Link to="/">
-                    <button className="buttons"> All Posts</button>
+                    <button className="buttons">All Posts</button>
                 </Link>
                 <Link to="/CreatePost">
-                    <button className="buttons"> Create Post </button>
+                    <button className="buttons">Create Post</button>
                 </Link>
-                <Link to="/LoginSignup">
-                    <button className="buttons"> Login/Signup </button>
+                <Link to="/Signup">
+                    <button className="buttons">Signup</button>
+                </Link>
+                <Link to="/Login">
+                    <button className="buttons">Login</button>
                 </Link>
                 <Link to="/logout">
-                    <button className="buttons"> Logout </button>
+                    <button className="buttons">Logout</button>
                 </Link>
             </div>
         </nav>

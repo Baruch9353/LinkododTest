@@ -20,7 +20,7 @@ export async function addPosts(newPost) {
   let id = posts.length > 0 ? Number(posts[posts.length - 1].id) + 1 : 1;
 
   const postToAdd = {
-    id: id+="",
+    id: id += "",
     name: newPost.name,
     description: newPost.description,
     likes: newPost.likes,
@@ -37,11 +37,9 @@ export async function updatePosts(id, updatedData) {
   const posts = await getAllPosts();
   const index = posts.find(r => r.id === id);
   if (!index) return null;
-
-  if (!updatedData.name || !updatedData.description || !updatedData.likes || !updatedData.time ) {
+  if (!updatedData.name || !updatedData.description || !updatedData.likes || !updatedData.time) {
     return null;
   }
-
   const updatedPost = {
     id,
     name: updatedData.name,
@@ -49,7 +47,6 @@ export async function updatePosts(id, updatedData) {
     likes: updatedData.likes,
     time: updatedData.time
   };
-
   posts[index.id] = updatedPost;
   await writeFile(listPosts, JSON.stringify(posts, null, 2));
   return updatedPost;
@@ -59,7 +56,6 @@ export async function updatePosts(id, updatedData) {
 export async function deletePosts(id) {
   const posts = await getAllPosts();
   const updatedPosts = posts.filter(r => r.id !== id);
-
   await writeFile(listPosts, JSON.stringify(updatedPosts, null, 2));
   return true;
 }
